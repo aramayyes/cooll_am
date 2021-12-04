@@ -2,6 +2,7 @@ import 'package:cooll/app_runner.dart';
 import 'package:cooll/localization/app_localization.dart';
 import 'package:cooll/models/app_locale_model.dart';
 import 'package:cooll/routes.dart';
+import 'package:cooll/theme/app_themes.dart';
 import 'package:cooll/utils/navigation_utils.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ class CoollApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: Routes.routes,
         initialRoute: initialRoute,
+        theme: AppThemes.lightTheme,
+        darkTheme: AppThemes.darkTheme,
       ),
     );
   }
