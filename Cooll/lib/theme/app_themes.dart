@@ -11,7 +11,7 @@ class AppThemes {
     highlightColor: Platform.isIOS ? Colors.transparent : null,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,
-    appBarTheme: AppBarTheme(
+    appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.primary,
       elevation: 0,
     ),
@@ -31,7 +31,7 @@ class AppThemes {
         ),
       ),
     ),
-    textSelectionTheme: TextSelectionThemeData(
+    textSelectionTheme: const TextSelectionThemeData(
       cursorColor: AppColors.primary,
     ),
   );

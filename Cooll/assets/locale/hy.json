@@ -1,4 +1,9 @@
 {
   "globals.appName": "Cooll",
-  "globals.signIn": "Մուտք"
+  "globals.signIn": "Մուտք",
+  "globals.homeBarItem": "Գլխավոր",
+  "globals.shopBarItem": "Խանութ",
+  "globals.sellACarBarItem": "Վաճառել",
+  "globals.signInBarItem": "Մուտք",
+  "globals.moreBarItem": "Ավելին"
 }

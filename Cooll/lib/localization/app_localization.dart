@@ -39,6 +39,16 @@ class AppLocalizations {
   String get appName => _translate('globals.appName');
 
   String get signIn => _translate('globals.signIn');
+
+  String get homeBarItem => _translate('globals.homeBarItem');
+
+  String get shopBarItem => _translate('globals.shopBarItem');
+
+  String get sellACarBarItem => _translate('globals.sellACarBarItem');
+
+  String get signInBarItem => _translate('globals.signInBarItem');
+
+  String get moreBarItem => _translate('globals.moreBarItem');
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

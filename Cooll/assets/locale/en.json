@@ -1,4 +1,9 @@
 {
   "globals.appName": "Cooll",
-  "globals.signIn": "Login"
+  "globals.signIn": "Login",
+  "globals.homeBarItem": "Home",
+  "globals.shopBarItem": "Shop",
+  "globals.sellACarBarItem": "Sell a Car",
+  "globals.signInBarItem": "Login",
+  "globals.moreBarItem": "More"
 }
