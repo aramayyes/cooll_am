@@ -71,6 +71,3 @@ class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
   @override
   bool shouldReload(AppLocalizationsDelegate old) => false;
 }
-
-//ignore: non_constant_identifier_names
-final AL = AppLocalizations();

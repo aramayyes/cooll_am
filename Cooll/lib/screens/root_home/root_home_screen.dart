@@ -1,5 +1,7 @@
+import 'package:collection/collection.dart';
 import 'package:cooll/constants/asset_constants.dart';
-import 'package:cooll/localization/app_localization.dart';
+import 'package:cooll/enums/app_locale.dart';
+import 'package:cooll/extensions/context_extensions.dart';
 import 'package:cooll/stores/root_home_screen_store.dart';
 import 'package:cooll/theme/app_colors.dart';
 import 'package:cooll/theme/app_dimens.dart';
@@ -7,7 +9,6 @@ import 'package:cooll/theme/app_typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:collection/collection.dart';
 
 class RootHomeScreen extends StatefulWidget {
   const RootHomeScreen({Key? key}) : super(key: key);
@@ -21,23 +22,23 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
   final bottomNavigationBarItems = <_BottomNavigationBarItemData>[
     _BottomNavigationBarItemData(
       icon: Icons.home,
-      label: () => AL.homeBarItem,
+      label: (context) => context.l.homeBarItem,
     ),
     _BottomNavigationBarItemData(
       icon: Icons.drive_eta_outlined,
-      label: () => AL.shopBarItem,
+      label: (context) => context.l.shopBarItem,
     ),
     _BottomNavigationBarItemData(
       icon: Icons.add_circle_outlined,
-      label: () => AL.sellACarBarItem,
+      label: (context) => context.l.sellACarBarItem,
     ),
     _BottomNavigationBarItemData(
       icon: Icons.account_circle_outlined,
-      label: () => AL.signInBarItem,
+      label: (context) => context.l.signInBarItem,
     ),
     _BottomNavigationBarItemData(
       icon: Icons.more_horiz_outlined,
-      label: () => AL.moreBarItem,
+      label: (context) => context.l.moreBarItem,
     ),
   ];
 
@@ -53,17 +54,36 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
                 padding: const EdgeInsets.only(left: 10.0),
                 child: SvgPicture.asset(AssetConstants.appLogo),
               ),
-              Padding(
-                padding: const EdgeInsets.only(right: 8.0),
-                child: ElevatedButton(
-                  onPressed: () {},
-                  child: Text(
-                    AL.signIn,
-                    style: const TextStyle(
-                      fontSize: AppTypography.buttonTinyText,
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text(
+                        context.l.signIn,
+                        style: const TextStyle(
+                          fontSize: AppTypography.buttonTinyText,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                  ...AppLocale.values
+                      .map(
+                        (l) => Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              context
+                                  .localeModel(listen: false)
+                                  .setLanguage(context, l);
+                            },
+                            child: Text(l.getCharFlag()),
+                          ),
+                        ),
+                      )
+                      .toList(),
+                ],
               ),
             ],
           ),
@@ -82,7 +102,7 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
                 (index, item) => _buildBottomNavigationBarItem(
                   index: index,
                   icon: item.icon,
-                  label: item.label(),
+                  label: item.label(context),
                 ),
               )
               .toList(),
@@ -134,7 +154,7 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
 
 class _BottomNavigationBarItemData {
   final IconData icon;
-  final String Function() label;
+  final String Function(BuildContext) label;
 
   _BottomNavigationBarItemData({
     required this.icon,
