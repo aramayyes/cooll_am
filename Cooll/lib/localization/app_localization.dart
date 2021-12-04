@@ -37,6 +37,8 @@ class AppLocalizations {
       _localizedStrings[key] ?? defaultValue ?? '![missing translation]';
 
   String get appName => _translate('globals.appName');
+
+  String get signIn => _translate('globals.signIn');
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

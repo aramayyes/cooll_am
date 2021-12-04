@@ -18,11 +18,11 @@ class AppThemes {
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         primary: AppColors.secondary,
+        onPrimary: AppColors.buttonText,
         elevation: 0,
-        textStyle: TextStyle(
-          color: AppColors.buttonText,
+        textStyle: const TextStyle(
           fontSize: AppTypography.buttonText,
-          fontWeight: FontWeight.w700,
+          fontWeight: FontWeight.normal,
         ),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(
