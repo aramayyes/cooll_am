@@ -5,5 +5,10 @@
   "globals.shopBarItem": "Shop",
   "globals.sellACarBarItem": "Sell a Car",
   "globals.signInBarItem": "Login",
-  "globals.moreBarItem": "More"
+  "globals.moreBarItem": "More",
+  "globals.noData": "No Items",
+  "globals.tryAgainButton": "Try Again",
+  "errors.defaultTitle": "An error occurred",
+  "errors.defaultMessage": "Unexpected error",
+  "errors.tapToTryAgain": "An error occurred. Tap to try again."
 }

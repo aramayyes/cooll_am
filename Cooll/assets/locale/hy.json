@@ -5,5 +5,10 @@
   "globals.shopBarItem": "Խանութ",
   "globals.sellACarBarItem": "Վաճառել",
   "globals.signInBarItem": "Մուտք",
-  "globals.moreBarItem": "Ավելին"
+  "globals.moreBarItem": "Ավելին",
+  "globals.noData": "Տվյալներ չկան",
+  "globals.tryAgainButton": "Փորձել կրկին",
+  "errors.defaultTitle": "Տեղի է ունեցել սխալ",
+  "errors.defaultMessage": "Անսպասելի սխալ",
+  "errors.tapToTryAgain": "Տեղի է ունեցել սխալ: Սեղմեք կոճակին կրկին փորձելու համար"
 }

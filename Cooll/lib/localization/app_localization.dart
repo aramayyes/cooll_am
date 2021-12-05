@@ -49,6 +49,16 @@ class AppLocalizations {
   String get signInBarItem => _translate('globals.signInBarItem');
 
   String get moreBarItem => _translate('globals.moreBarItem');
+
+  String get noData => _translate('globals.noData');
+
+  String get tryAgainButton => _translate('globals.tryAgainButton');
+
+  String get errorDefaultTitle => _translate('errors.defaultTitle');
+
+  String get errorDefaultMessage => _translate('errors.defaultMessage');
+
+  String get errorTapToTryAgain => _translate('errors.tapToTryAgain');
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
