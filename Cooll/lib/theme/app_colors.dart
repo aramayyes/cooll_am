@@ -7,6 +7,8 @@ class AppColors {
   static const Color backgroundSecondary = Color(0xFFf2f2f2);
   static const Color inactive = Color(0xFF666666);
 
+  static const Color shadow = Color(0x1a000000);
+
   static const Color bottomNavigationText = Color(0xFFFFFFFF);
   static Color buttonText = const Color(0xFFFFFFFF);
 }

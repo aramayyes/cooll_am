@@ -5,6 +5,7 @@ class ProductDto {
   final int year;
   final String name;
   final double mileage;
+  final double? engineCapacity;
   final double price;
   final List<String> images;
 
@@ -13,6 +14,7 @@ class ProductDto {
     required this.year,
     required this.name,
     required this.mileage,
+    this.engineCapacity,
     required this.price,
     required this.images,
   });
@@ -22,6 +24,7 @@ class ProductDto {
         year = json['year'],
         name = json['name'],
         mileage = json['mileage'].toDouble(),
+        engineCapacity = json['engineCapacity'],
         price = json['price'].toDouble(),
         images = json['images'].cast<String>();
 }
