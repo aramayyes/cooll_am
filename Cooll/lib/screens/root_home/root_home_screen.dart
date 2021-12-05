@@ -3,7 +3,7 @@ import 'package:cooll/constants/asset_constants.dart';
 import 'package:cooll/enums/app_locale.dart';
 import 'package:cooll/extensions/context_extensions.dart';
 import 'package:cooll/screens/root_home/views/home_view.dart';
-import 'package:cooll/stores/root_home_screen_store.dart';
+import 'package:cooll/stores/root_home_screen_store/root_home_screen_store.dart';
 import 'package:cooll/theme/app_colors.dart';
 import 'package:cooll/theme/app_dimens.dart';
 import 'package:cooll/theme/app_typography.dart';
