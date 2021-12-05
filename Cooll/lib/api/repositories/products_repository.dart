@@ -2,16 +2,17 @@ import 'package:cooll/api/dio_client.dart';
 import 'package:cooll/api/dtos/product_dto.dart';
 
 class ProductsRepository {
-  static const _topPicks = 'products/type/top';
+  static const _getProducts = 'products/filter';
 
-  static Future<ProductsListResponseDto> getTopProducts({
+  static Future<ProductsListResponseDto> getProducts({
+    required int page,
     required int limit,
     required int offset,
   }) async {
     final client = DioClient.getClient();
-    final response = await client.get(_topPicks, queryParameters: {
+    final response = await client.get(_getProducts, queryParameters: {
       'limit': limit,
-      'offset': offset,
+      'page': page - 1,
     });
 
     return ProductsListResponseDto.fromJson(response.data);
