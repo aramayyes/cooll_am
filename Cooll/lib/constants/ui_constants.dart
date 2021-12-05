@@ -1,3 +1,3 @@
 class UIConstants {
-  static const pagedListLimit = 10;
+  static const pagedListLimit = 30;
 }

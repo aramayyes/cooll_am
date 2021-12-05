@@ -8,6 +8,9 @@
   "globals.moreBarItem": "More",
   "globals.noData": "No Items",
   "globals.tryAgainButton": "Try Again",
+  "globals.price": "$ %s",
+  "productCard.mileage":  "%s KM",
+  "productCard.engineCapacity":  "%s L",
   "errors.defaultTitle": "An error occurred",
   "errors.defaultMessage": "Unexpected error",
   "errors.tapToTryAgain": "An error occurred. Tap to try again."

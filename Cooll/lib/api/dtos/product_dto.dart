@@ -24,7 +24,7 @@ class ProductDto {
         year = json['year'],
         name = json['name'],
         mileage = json['mileage'].toDouble(),
-        engineCapacity = json['engineCapacity'],
+        engineCapacity = json['engineCapacity']?.toDouble(),
         price = json['price'].toDouble(),
         images = json['images'].cast<String>();
 }

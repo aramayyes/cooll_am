@@ -1,10 +1,11 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:cooll/constants/asset_constants.dart';
 import 'package:cooll/enums/app_locale.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:sprintf/sprintf.dart';
+import 'package:intl/intl.dart';
 
 class AppLocalizations {
   static final AppLocalizations _singleton = AppLocalizations._();
@@ -51,6 +52,19 @@ class AppLocalizations {
   String get moreBarItem => _translate('globals.moreBarItem');
 
   String get noData => _translate('globals.noData');
+
+  String price(double price) {
+    final format = NumberFormat("#,##0", "hy_AM");
+    return sprintf(_translate('globals.price'), [format.format(price)]);
+  }
+
+  String productCardMileage(double mileage) {
+    final format = NumberFormat("#,##0", "hy_AM");
+    return sprintf(_translate('productCard.mileage'), [format.format(mileage)]);
+  }
+
+  String productCardEngineCapacity(double engineCapacity) =>
+      sprintf(_translate('productCard.engineCapacity'), [engineCapacity]);
 
   String get tryAgainButton => _translate('globals.tryAgainButton');
 

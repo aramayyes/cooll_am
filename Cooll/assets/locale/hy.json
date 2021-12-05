@@ -8,6 +8,9 @@
   "globals.moreBarItem": "Ավելին",
   "globals.noData": "Տվյալներ չկան",
   "globals.tryAgainButton": "Փորձել կրկին",
+  "globals.price": "$ %s",
+  "productCard.mileage":  "%s ԿՄ",
+  "productCard.engineCapacity":  "%s Լ",
   "errors.defaultTitle": "Տեղի է ունեցել սխալ",
   "errors.defaultMessage": "Անսպասելի սխալ",
   "errors.tapToTryAgain": "Տեղի է ունեցել սխալ: Սեղմեք կոճակին կրկին փորձելու համար"
