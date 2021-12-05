@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cooll/api/dtos/product_dto.dart';
 import 'package:cooll/extensions/context_extensions.dart';
 import 'package:cooll/theme/app_colors.dart';
@@ -29,19 +30,28 @@ class ProductCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(AppDimens.cardBorderRadius),
         child: Column(
           children: [
-            AspectRatio(
-              aspectRatio: 1.33,
-              child: Container(
-                color: AppColors.background,
-                child: FancyShimmerImage(
-                  imageUrl: product.images.first,
-                  boxFit: BoxFit.cover,
-                  errorWidget: const Icon(
-                    Icons.broken_image_outlined,
-                    size: 48,
-                  ),
-                ),
+            CarouselSlider(
+              options: CarouselOptions(
+                aspectRatio: 1.33,
+                viewportFraction: 1,
               ),
+              items: product.images.map((i) {
+                return Builder(
+                  builder: (BuildContext context) {
+                    return Container(
+                      color: AppColors.background,
+                      child: FancyShimmerImage(
+                        imageUrl: i,
+                        boxFit: BoxFit.cover,
+                        errorWidget: const Icon(
+                          Icons.broken_image_outlined,
+                          size: 48,
+                        ),
+                      ),
+                    );
+                  },
+                );
+              }).toList(),
             ),
             Expanded(
               child: Container(
