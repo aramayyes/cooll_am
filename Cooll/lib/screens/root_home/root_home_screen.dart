@@ -2,6 +2,7 @@ import 'package:collection/collection.dart';
 import 'package:cooll/constants/asset_constants.dart';
 import 'package:cooll/enums/app_locale.dart';
 import 'package:cooll/extensions/context_extensions.dart';
+import 'package:cooll/screens/root_home/views/home_view.dart';
 import 'package:cooll/stores/root_home_screen_store.dart';
 import 'package:cooll/theme/app_colors.dart';
 import 'package:cooll/theme/app_dimens.dart';
@@ -40,6 +41,14 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
       icon: Icons.more_horiz_outlined,
       label: (context) => context.l.moreBarItem,
     ),
+  ];
+
+  final List<Widget> _childViews = [
+    const HomeView(),
+    Container(color: Colors.amber),
+    Container(color: Colors.lightBlueAccent),
+    Container(color: Colors.deepPurple),
+    Container(color: Colors.greenAccent),
   ];
 
   @override
@@ -89,7 +98,10 @@ class _RootHomeScreenState extends State<RootHomeScreen> {
           ),
           titleSpacing: AppDimens.appBarSpacing,
         ),
-        body: Container(),
+        body: IndexedStack(
+          index: store.activeIndex,
+          children: _childViews,
+        ),
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: AppColors.primary,
           elevation: 0,
